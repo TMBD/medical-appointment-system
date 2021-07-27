@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical appointment system</title>
+    <link rel="stylesheet" href="styles/design.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <script src="./script/lib/jquery-3.4.1.js"></script>
+    <script src="./script/patientUtils.js"></script>
+</head>
+<body>
+    <div id="entete">Medical appointment system</div>
+    <div id="menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+        </ul>
+    </div>
+    <div id="corps">
+		<h1 id="titre-principal">Update patient</h1>
+		<form onsubmit="return false">
+			<div>
+				<legend></legend>
+				<label>Name</label>
+				<input type="text" name="name" id="name"><br>
+				<label>Surname</label>
+				<input type="text" name="surname" id="surname"><br>
+				<label>Date of birth</label>
+				<input type="date" name="birthDate" id="birthDate"><br>
+				<label>Social security number</label>
+				<input type="text" name="ssn" id="ssn"><br>
+                <input type="hidden" name="id" id="id">
+				<input type="submit" value="Update the patient" onclick="handleUpdatePatient()">
+            </div>
+		</form>
+	</div>
+    <div id="pied">Copyright &copy; CGM 2021</div>
+    <script>
+        loadPatientData();
+    </script>
+</body>
+</html>

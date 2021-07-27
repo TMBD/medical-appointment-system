@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical appointment system</title>
+    <link rel="stylesheet" href="styles/design.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <script src="./script/lib/jquery-3.4.1.js"></script>
+    <script src="./script/visitUtils.js"></script>
+</head>
+<body>
+    <div id="entete">Medical appointment system</div>
+    <div id="menu">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+        </ul>
+    </div>
+    <div id="corps">
+		<h1 id="titre-principal">Update visit</h1>
+		<form onsubmit="return false">
+			<div>
+				<label>Date</label>
+				<input type="datetime-local" name="date" id="date"><br>
+				<label>Type</label>
+                <select name="type" id="type">
+                    <option value="HOME">Home</option>
+                    <option value="OFFICE">Office</option>
+                 </select><br>
+				<label>Reason</label>
+				<input type="text" name="reason" id="reason"><br>
+				<label>Family history</label>
+				<textarea name="history" id="history"></textarea><br>
+                <input type="hidden" name="id" id="id">
+				<input type="submit" value="Update the visit" onclick="handleUpdateVisit()">
+            </div>
+		</form>
+	</div>
+    <div id="pied">Copyright &copy; CGM 2021</div>
+    <script>
+        loadVisitData();
+    </script>
+</body>
+</html>
